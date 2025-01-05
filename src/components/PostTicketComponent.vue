@@ -10,14 +10,13 @@
       <span>{{ isUpdateMode ? 'Обновить существующий билет' : 'Создать новый билет' }}</span>
     </div>
 
-    <!-- ID Field (only visible in update mode) -->
+
     <div v-if="isUpdateMode">
       <label for="ticketId">ID билета:</label>
       <input v-model.number="ticketData.id" id="ticketId" type="number"  min="1" required />
       <p v-if="validationErrors.id" class="error">{{ validationErrors.id }}</p>
     </div>
 
-    <!-- Form -->
     <form @submit.prevent="validateAndSubmit">
       <div>
         <label for="name">Название:</label>

@@ -1,12 +1,10 @@
 <template>
   <div id="booking-actions">
-    <!-- Статичные кнопки для выбора задачи -->
     <div class="button-group">
       <button @click="currentTask = 'createDiscount'">Создать билет со скидкой</button>
       <button @click="currentTask = 'cancelBookings'">Отменить бронирования</button>
     </div>
 
-    <!-- Форма для создания билета со скидкой -->
     <div v-if="currentTask === 'createDiscount'" class="form-group">
       <h2>Создание билета со скидкой</h2>
       <form @submit.prevent="createTicketWithDiscount">
@@ -23,7 +21,6 @@
       </form>
     </div>
 
-    <!-- Форма для отмены бронирований -->
     <div v-if="currentTask === 'cancelBookings'" class="form-group">
       <h2>Отмена бронирований</h2>
       <form @submit.prevent="cancelBookings">
@@ -34,7 +31,6 @@
       </form>
     </div>
 
-    <!-- Сообщения об успешной обработке или ошибке -->
     <div v-if="responseMessage" class="response">
       <p>{{ responseMessage }}</p>
     </div>
@@ -49,7 +45,7 @@ export default {
   name: "BookingActions",
   data() {
     return {
-      currentTask: null, // Текущая выбранная задача
+      currentTask: null,
       discountForm: {
         ticketId: null,
         personId: null,

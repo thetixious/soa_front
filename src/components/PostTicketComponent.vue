@@ -187,8 +187,8 @@ export default {
         //
         // };
         const url = this.isUpdateMode
-            ? `https://localhost:8080/tickets/${this.ticketData.id}`
-            : "https://localhost:8080/tickets";
+            ? `https://localhost:8000/tickets/${this.ticketData.id}`
+            : "https://localhost:8000/tickets";
         const method = this.isUpdateMode ? "put" : "post";
 
         const response = await axios({ method, url, data: this.ticketData });
@@ -233,11 +233,11 @@ export default {
 <!--      try {-->
 <!--        if (this.isUpdateMode) {-->
 <!--          // Отправка запроса на обновление-->
-<!--          const response = await axios.put(`http://localhost:8080/tickets/${this.ticketData.id}`, this.ticketData);-->
+<!--          const response = await axios.put(`http://localhost:8000/tickets/${this.ticketData.id}`, this.ticketData);-->
 <!--          this.responseMessage = response.data;-->
 <!--        } else {-->
 <!--          // Отправка запроса на создание-->
-<!--          const response = await axios.post('http://localhost:8080/tickets', this.ticketData);-->
+<!--          const response = await axios.post('http://localhost:8000/tickets', this.ticketData);-->
 <!--          this.responseMessage = response.data;-->
 <!--        }-->
 <!--        this.errorMessage = null;-->

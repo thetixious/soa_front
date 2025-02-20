@@ -74,12 +74,13 @@ export default {
     async cancelBookings() {
       try {
         const { personId } = this.cancelForm;
-        const url = `http://localhost:8081/soa2_1-1.0-SNAPSHOT/api/booking/person/${personId}/cancel`;
+        const url = `http://localhost:8080/api-1.0-SNAPSHOT/api/booking/person/${personId}/cancel`;
         const response = await axios.put(url);
         // Успешное сообщение при отмене бронирований
         this.responseMessage = `Все бронирования отменены для пользователя с id ${personId}`;
         this.errorMessage = null;
       } catch (error) {
+        this.responseMessage = `Все бронирования отменены для пользователя с id ${personId}`;
         this.errorMessage = error.response?.data?.message || "Произошла ошибка при отмене бронирований";
         this.responseMessage = null;
       }

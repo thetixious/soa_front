@@ -108,7 +108,7 @@ export default {
       this.errorMessage = null;
 
       try {
-        await axios.delete(`https://localhost:8080/tickets/${this.ticketId}`);
+        await axios.delete(`https://localhost:8000/tickets/${this.ticketId}`);
         this.successMessage = `Билет с ID ${this.ticketId} успешно удалён.`;
       } catch (error) {
         this.successMessage = null
@@ -130,7 +130,7 @@ export default {
 
 
       try {
-        const response = await axios.delete(`https://localhost:8080/tickets/byPrice/${this.price}`);
+        const response = await axios.delete(`https://localhost:8000/tickets/byPrice/${this.price}`);
         this.deletedTicket = response.data;
         this.successMessage = `Билет с ценой ${this.price} успешно удалён.`;
       } catch (error) {

@@ -156,7 +156,7 @@ export default {
 
       try {
         const params = this.formatQueryParams();
-        const response = await axios.get(`https://localhost:8080/tickets?${params}`);
+        const response = await axios.get(`https://localhost:8000/tickets?${params}`);
         this.tickets = response.data;
       } catch (error) {
         this.errorMessage = error.response?.data?.message || "Произошла ошибка";

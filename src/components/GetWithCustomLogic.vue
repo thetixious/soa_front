@@ -149,7 +149,7 @@ export default {
       this.ticket = null;
 
       try {
-        const response = await axios.get(`https://localhost:8080/tickets/${this.ticketId}`);
+        const response = await axios.get(`https://localhost:8000/tickets/${this.ticketId}`);
         this.ticket = response.data;
       } catch (error) {
         this.errorMessage = error.response?.data?.message || "Произошла ошибка";
@@ -164,7 +164,7 @@ export default {
       this.tickets = [];
 
       try {
-        const response = await axios.get("https://localhost:8080/tickets/start/comment", {
+        const response = await axios.get("https://localhost:20000/tickets/start/comment", {
           params: {commentStartsWith: this.commentStartsWith},
         });
         this.tickets = response.data;
@@ -186,7 +186,7 @@ export default {
       this.ticketCount = null;
 
       try {
-        const response = await axios.get(`https://localhost:8080/tickets/byPrice/${this.price}`);
+        const response = await axios.get(`http://localhost:20000/tickets/byPrice/${this.price}`);
         this.ticketCount = response.data;
       } catch (error) {
         this.errorMessage = error.response?.data?.message || "Произошла ошибка";

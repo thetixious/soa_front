@@ -62,7 +62,7 @@ export default {
     async createTicketWithDiscount() {
       try {
         const { ticketId, personId, discount } = this.discountForm;
-        const url = `http://localhost:8081/soa2_1-1.0-SNAPSHOT/api/booking/sell/discount/${ticketId}/${personId}/${discount}`;
+        const url = ` http://localhost:8082/api/booking/sell/discount/${ticketId}/${personId}/${discount}`;
         const response = await axios.post(url);
         this.responseMessage = `Билет со скидкой успешно создан для человека с ID ${personId}`;
         this.errorMessage = null;
@@ -74,7 +74,7 @@ export default {
     async cancelBookings() {
       try {
         const { personId } = this.cancelForm;
-        const url = `http://localhost:8080/api-1.0-SNAPSHOT/api/booking/person/${personId}/cancel`;
+        const url = `http://localhost:8082/api/booking/person/${personId}/cancel`;
         const response = await axios.put(url);
         // Успешное сообщение при отмене бронирований
         this.responseMessage = `Все бронирования отменены для пользователя с id ${personId}`;
